@@ -16,10 +16,7 @@ class ComputerController extends Controller
         return $response->json();
     }
 
-    public function index()
-    {
-        $url = env('URL_SERVER_API');
-
+    public function index()ñ
         $computers = $this->fetchDataFromApi($url . '/computers');
 
         return view('computers.index', compact('computers'));
