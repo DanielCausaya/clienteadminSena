@@ -1,10 +1,6 @@
 <?php
 
-use App\Http\Controllers\AreaController;
 use App\Http\Controllers\ComputerController;
-use App\Http\Controllers\PostController;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\TrainingCenterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,7 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
- Route::get('computers', [ComputerController::class, 'index'])->name('computers.index');
+Route::get('/', [ComputerController::class, 'index']);
+
+Route::get('computers', [ComputerController::class, 'index'])->name('computers.index');
 Route::get('computer/create', [ComputerController::class, 'create'])->name('computer.create');
 Route::post('computer', [ComputerController::class, 'store'])->name('computer.store');
 Route::get('computer/{computer}', [ComputerController::class, 'show'])->name('computer.show');
